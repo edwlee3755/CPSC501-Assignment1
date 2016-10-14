@@ -2,7 +2,7 @@ public class SpaceSimulator
 {
     public static void main (String [] args)
     {
-    	Galaxy userInterface = new Galaxy();
+    	GameManager userInterface = new GameManager();
     	userInterface.startProcessingCommands();
     }
 }
