@@ -71,7 +71,7 @@ public class StarShip
         return damageDealt;
     }
 
-    public void regenerate()
+    public void regenerateStarShipHealth()
     {
         hullValue = hullValue + 40;
         if (hullValue > MAX_HULL)
@@ -80,7 +80,7 @@ public class StarShip
         }
     }
 
-    public void reduceHull(int damageTaken)
+    public void reduceStarShipHealth(int damageTaken)
     {
         hullValue = hullValue - damageTaken;
         if (hullValue < 0)

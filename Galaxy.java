@@ -248,52 +248,47 @@ public class Galaxy
         if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() - 1)))
         {
             adjacentValue = true;
-            return (adjacentValue);
         }
         // Check if computer is at position (8) in relation to the human.
         if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 0)))
         {
             adjacentValue = true;
-            return (adjacentValue);
         }
         // Check if computer is at position (7) in relation to the human.
         if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 1)))
         {
             adjacentValue = true;
-            return (adjacentValue);
         }
         // Check if computer is at position (6) in relation to the human.
         if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 0)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() - 1)))
         {
             adjacentValue = true;
-            return (adjacentValue);
         }
         // Check if computer is at position (4) in relation to the human.
         if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 0)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 1)))
         {
             adjacentValue = true;
-            return (adjacentValue);
         }
         // Check if computer is at position (3) in relation to the human.
         if (((humanPlayer.getRow()) == (computerPlayer.getRow() - 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() - 1)))
         {
             adjacentValue = true;
-            return (adjacentValue);
         }
         // Check if computer is at position (2) in relation to the human.
         if (((humanPlayer.getRow()) == (computerPlayer.getRow() - 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 0)))
         {
             adjacentValue = true;
-            return (adjacentValue);
         }
         // Check if computer is at position (1) in relation to the human.
         if (((humanPlayer.getRow()) == (computerPlayer.getRow() - 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 1)))
         {
             adjacentValue = true;
-            return (adjacentValue);
         }
         
-        adjacentValue = false;
+        else
+        {
+        	adjacentValue = false;
+       	}
         return (adjacentValue);
     }
     
@@ -342,8 +337,8 @@ public class Galaxy
 		{
             humanDamage = humanPlayer.determineDamage();
             computerDamage = computerPlayer.determineDamage();
-            humanPlayer.reduceHull(computerDamage);
-            computerPlayer.reduceHull(humanDamage);
+            humanPlayer.reduceStarShipHealth(computerDamage);
+            computerPlayer.reduceStarShipHealth(humanDamage);
             if (GameStatus.cheatModeOn == true) {
             	computerDamage = 0;
             }
@@ -376,8 +371,8 @@ public class Galaxy
     	if ((GameStatus.gameWon != true) && (GameStatus.gameLost != true))
     	{
     		System.out.println("The ships will now regenerate.");
-    		humanPlayer.regenerate();
-    		computerPlayer.regenerate();
+    		humanPlayer.regenerateStarShipHealth();
+    		computerPlayer.regenerateStarShipHealth();
     	}
     }   
 }

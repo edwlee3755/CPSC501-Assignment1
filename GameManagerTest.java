@@ -13,13 +13,13 @@ public class GameManagerTest {
 	
 	@Test
 	public void testMovementMenu() {
-		//GameManager.printMovementMenu();
+		GameManager.printMovementMenu();
 		
 	}
 	
 	@Test
 	public void testAttackMenu() {
-		//GameManager.printAttackMenu();
+		GameManager.printAttackMenu();
 	}
 	
 	//Test if instance of Galaxy was made after extract class

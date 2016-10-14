@@ -57,7 +57,7 @@ public class GameManager
     }
 
     // Method to display movement menu.
-    public void printMovementMenu()
+    public static void printMovementMenu()
     {
         System.out.println("");
         System.out.println("MOVEMENT MENU: OPTIONS");
