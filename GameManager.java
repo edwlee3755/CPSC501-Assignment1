@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class GameManager
 {
-    private Galaxy milkyWay;
+    public Galaxy milkyWay;
     // Decide who's turn it currently is and if ships are adjacent.
     boolean humanTurn = true;
     boolean adjacentValue = false;
@@ -158,7 +158,7 @@ public class GameManager
     }
 
     // Method that generates computer input.
-    public static int computerInput() 
+    public int computerInput() 
     {   
         int selection;
         Random aiRandomInput = new Random();
@@ -189,19 +189,11 @@ public class GameManager
             System.out.println("     Your ship is gone. Try again!");
             System.out.println("========================================");            
         }
-    }      
+        
 
+    }      
     
-    
-    
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public Galaxy getMilkyWay(){
+    	return this.milkyWay; 
+    }  
 }

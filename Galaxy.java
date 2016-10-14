@@ -5,8 +5,8 @@ public class Galaxy
 {
     public static final int SIZE = 4;
     private StarShip [][] grid;
-    private StarShip humanPlayer;
-    private StarShip computerPlayer;
+    public StarShip humanPlayer;
+    public StarShip computerPlayer;
     
     // Decide who's turn it currently is and if ships are adjacent.
     boolean humanTurn = true;
@@ -24,10 +24,10 @@ public class Galaxy
 		Scanner in = new Scanner(System.in);
 		int r;
 		int c;
-		int hull;
+		int hull=300;
 
-		System.out.print("Computer ship hull value: ");
-		hull = in.nextInt();
+//		System.out.print("Computer ship hull value: ");
+//		hull = in.nextInt();
 		computerPlayer = new StarShip(hull);
 		computerPlayer.setAppearance(StarShip.DEFAULT_APPEARANCE);
 
@@ -245,82 +245,58 @@ public class Galaxy
     {
     	boolean adjacentValue;
         // Check if computer is at position (9) in relation to the human.
-        if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() - 1))) 
+        if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() - 1)))
         {
-        	adjacentValue = true;
-        	return (adjacentValue);
+            adjacentValue = true;
+            return (adjacentValue);
         }
-        
         // Check if computer is at position (8) in relation to the human.
-        else {        	
-        	if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 0))) 
-        	{
-        		adjacentValue = true;
-        		return (adjacentValue);
-        	}
-
-	        // Check if computer is at position (7) in relation to the human.
-	        else { 
-	        	if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 1))) 
-	        	{
-	        		adjacentValue = true;
-	        		return (adjacentValue);
-	        	}
-        
-		        // Check if computer is at position (6) in relation to the human.
-		        else { 
-		        	if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 0)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() - 1))) 
-		        	{
-		        		adjacentValue = true;
-		        		return (adjacentValue);
-		        	}
-
-		        	// Check if computer is at position (4) in relation to the human.
-			        else { 
-			        	if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 0)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 1))) 
-			        	{
-			        		adjacentValue = true;
-			        		return (adjacentValue);
-			        	}
-
-				        // Check if computer is at position (3) in relation to the human.
-				        else { 
-				        	if (((humanPlayer.getRow()) == (computerPlayer.getRow() - 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() - 1))) 
-				        	{
-				        		adjacentValue = true;
-				        		return (adjacentValue);
-				        	}
-
-					        // Check if computer is at position (2) in relation to the human.
-					        else { 
-					        	if (((humanPlayer.getRow()) == (computerPlayer.getRow() - 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 0))) 
-					        	{
-					        		adjacentValue = true;
-					        		return (adjacentValue);
-					        	}
-
-						        // Check if computer is at position (1) in relation to the human.
-						        else {
-						        	if (((humanPlayer.getRow()) == (computerPlayer.getRow() - 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 1))) 
-						        	{
-						        		adjacentValue = true;
-						        		return (adjacentValue);
-						        	}
-
-							        else
-							        {
-							        	adjacentValue = false;
-							        	return (adjacentValue);
-							        }
-						        }
-					        }
-				        }
-			        }
-		        }
-	        }
+        if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 0)))
+        {
+            adjacentValue = true;
+            return (adjacentValue);
         }
+        // Check if computer is at position (7) in relation to the human.
+        if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 1)))
+        {
+            adjacentValue = true;
+            return (adjacentValue);
+        }
+        // Check if computer is at position (6) in relation to the human.
+        if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 0)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() - 1)))
+        {
+            adjacentValue = true;
+            return (adjacentValue);
+        }
+        // Check if computer is at position (4) in relation to the human.
+        if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 0)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 1)))
+        {
+            adjacentValue = true;
+            return (adjacentValue);
+        }
+        // Check if computer is at position (3) in relation to the human.
+        if (((humanPlayer.getRow()) == (computerPlayer.getRow() - 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() - 1)))
+        {
+            adjacentValue = true;
+            return (adjacentValue);
+        }
+        // Check if computer is at position (2) in relation to the human.
+        if (((humanPlayer.getRow()) == (computerPlayer.getRow() - 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 0)))
+        {
+            adjacentValue = true;
+            return (adjacentValue);
+        }
+        // Check if computer is at position (1) in relation to the human.
+        if (((humanPlayer.getRow()) == (computerPlayer.getRow() - 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() + 1)))
+        {
+            adjacentValue = true;
+            return (adjacentValue);
+        }
+        
+        adjacentValue = false;
+        return (adjacentValue);
     }
-
+    
     // Method for ships to attack and lower the null values accordingly.
     public void attackShip(int selection)
     {
