@@ -38,14 +38,14 @@ public class GameManager
                 System.out.println("Game lost: " + GameStatus.gameLost);
             }
             milkyWay.display();
-            print1();
+            printMovementMenu();
             selection = askInput();
             milkyWay.moveShip(selection, humanTurn);
             milkyWay.display();
             adjacentValue = milkyWay.checkAdjacent();
             if (adjacentValue == true)
             {
-                print2();
+                printAttackMenu();
                 selection = askInput();
                 milkyWay.attackShip(selection);
             }
@@ -57,7 +57,7 @@ public class GameManager
     }
 
     // Method to display movement menu.
-    public void print1()
+    public void printMovementMenu()
     {
         System.out.println("");
         System.out.println("MOVEMENT MENU: OPTIONS");
@@ -72,7 +72,7 @@ public class GameManager
     }
 
     // Method to display attack menu.
-    public void print2()
+    public void printAttackMenu()
     {
         System.out.println("");
         System.out.println("ATTACK MENU: OPTIONS");
@@ -161,8 +161,8 @@ public class GameManager
     public static int computerInput() 
     {   
         int selection;
-        Random ai = new Random();
-        selection = ai.nextInt(9) + 1;
+        Random aiRandomInput = new Random();
+        selection = aiRandomInput.nextInt(9) + 1;
         return selection;
     }  
 

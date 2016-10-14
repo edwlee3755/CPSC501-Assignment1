@@ -11,8 +11,8 @@ public class GameManagerTest {
 	}
 	
 	@Test
-	public void testPrint1() {
-		//GameManager.print1();
+	public void testMovementMenu() {
+		//GameManager.printMovementMenu();
 		
 	}
 
