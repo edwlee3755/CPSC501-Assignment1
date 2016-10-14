@@ -72,7 +72,7 @@ public class GameManager
     }
 
     // Method to display attack menu.
-    public void printAttackMenu()
+    public static void printAttackMenu()
     {
         System.out.println("");
         System.out.println("ATTACK MENU: OPTIONS");

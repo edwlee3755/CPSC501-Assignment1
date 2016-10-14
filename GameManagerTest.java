@@ -17,6 +17,11 @@ public class GameManagerTest {
 		
 	}
 	
+	@Test
+	public void testAttackMenu() {
+		//GameManager.printAttackMenu();
+	}
+	
 	//Test if instance of Galaxy was made after extract class
 	@Test
 	public void testGameManagerConstrutor(){
