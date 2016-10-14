@@ -554,7 +554,7 @@ public class Galaxy
     }
 
     // Method that generates computer input.
-    public int computerInput() 
+    public static int computerInput() 
     {   
         int selection;
         Random ai = new Random();
