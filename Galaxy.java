@@ -60,7 +60,7 @@ public class Galaxy
     }
 
     
-     //Display method to display the galaxy (no grid)
+    // Display method to display the galaxy (no grid)
     public void display ()
     {
 	int r;
@@ -243,7 +243,7 @@ public class Galaxy
 
     public boolean checkAdjacent()
     {
-    	boolean adjacentValue;
+    	boolean adjacentValue = false;
         // Check if computer is at position (9) in relation to the human.
         if (((humanPlayer.getRow()) == (computerPlayer.getRow() + 1)) && ((humanPlayer.getColumn()) == (computerPlayer.getColumn() - 1)))
         {
@@ -284,11 +284,7 @@ public class Galaxy
         {
             adjacentValue = true;
         }
-        
-        else
-        {
-        	adjacentValue = false;
-       	}
+
         return (adjacentValue);
     }
     
